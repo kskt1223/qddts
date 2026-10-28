@@ -82,6 +82,20 @@ test('serves crawl rules and a sitemap containing only the canonical page', asyn
   assert.deepEqual([...((await sitemap.text()).matchAll(/<loc>(.*?)<\/loc>/g))].map((match) => match[1]), ['https://www.qddts.cn/']);
 });
 
+test('serves an independent Speed Insights module and its local SDK without weakening the script policy', async () => {
+  const html = await (await request('/')).text();
+  assert.match(html, /<script(?=[^>]*src="\/speed-insights\.js")(?=[^>]*type="module")(?=[^>]*async)[^>]*><\/script>/);
+  for (const path of ['/speed-insights.js', '/vendor/speed-insights/index.mjs']) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    assert.match(response.headers.get('content-type'), /javascript/);
+    assert.match(response.headers.get('content-security-policy'), /script-src 'self';/);
+  }
+  const license = await request('/vendor/speed-insights/LICENSE');
+  assert.equal(license.status, 200);
+  assert.match(await license.text(), /Apache License/);
+});
+
 test('removes admin pages, scripts, APIs and all ordering APIs', async () => {
   for (const path of ['/admin', '/admin.html', '/admin.js', '/api/shop', '/api/orders', '/api/admin/session', '/api/admin/orders', '/api/admin/login']) {
     for (const method of ['GET', 'POST']) assert.equal((await request(path, method)).status, 404, `${method} ${path}`);

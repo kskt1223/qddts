@@ -4,9 +4,10 @@
 
 ## 本地预览
 
-使用 Node.js 22.13 或以上版本，无第三方运行依赖。
+使用 Node.js 22.13 或以上版本。先安装依赖，再启动本地预览：
 
 ```sh
+npm ci
 npm run dev
 ```
 
@@ -54,11 +55,22 @@ scripts/    静态页面构建命令
 tests/      静态内容、页面生成和只读服务验证
 ```
 
-执行 `npm run build` 后，将 `public/` 的内容部署到网站根目录，并配置 HTTPS。运行时只需要静态托管；也可使用 `npm start` 本地预览。提交代码时应同时提交生成文件，便于直接复制 `public/` 部署。
+执行 `npm ci`、`npm run build` 后，将 `public/` 的内容部署到网站根目录，并配置 HTTPS。运行时只需要静态托管；也可使用 `npm start` 本地预览。提交代码时应同时提交生成文件（含 `public/vendor/`），便于直接复制 `public/` 部署。
 
 Vercel 已通过根目录的 `vercel.json` 配置：框架为 Other（`framework: null`）、构建命令为 `npm run build`、输出目录为 `public`。项目根目录保持仓库根目录。以前的“构建命令留空”设置由仓库配置覆盖，部署日志应显示执行了生成步骤。提交到 Vercel 关联的 GitHub 生产分支后会自动部署。
 
 页面不依赖数据库、不生成管理密码、不收集客户订水信息。旧版 `.data/` 不再读取，也不会通过网页提供下载；`AGENTS.md` 保留原样。
+
+## 访问速度监测
+
+已安装 `@vercel/speed-insights`，按照原生 JavaScript 方式调用 `injectSpeedInsights()`，采集真实访问的页面性能指标。首页异步加载独立模块 `public/speed-insights.js`，联系方式、产品筛选等交互使用原有的 `app.js`。
+
+- 修改初始化逻辑时编辑 `src/speed-insights.mjs`，再执行 `npm run build`。构建会复制官方 SDK、源码映射及许可证到 `public/vendor/speed-insights/`，并带入 Vercel 提供的公开客户端配置 `VERCEL_OBSERVABILITY_CLIENT_CONFIG`。
+- 默认采集脚本为同源的 `/_vercel/speed-insights/script.js`；Vercel 提供自定义采集路径时，SDK 会使用相应配置。`localhost`、`127.0.0.1` 和 `[::1]` 的本地预览不加载采集脚本。
+- 发布到 Vercel 后，在项目的 **Speed Insights** 中确认已启用，打开网站并产生真实访问，再查看面板数据。尚无数据时，检查浏览器是否拦截采集脚本、脚本与数据请求是否成功，并留出数据汇总时间。
+- 性能采集接口由 Vercel 提供，普通 Nginx 静态部署不提供这些接口。安装和构建参考 [Vercel 官方指南](https://vercel.com/docs/speed-insights/quickstart)。
+
+测试覆盖生产环境的 SDK 初始化、重复加载保护、本地预览禁用、Vercel 动态采集路径，以及发布文件与安装包的一致性。
 
 ## 百度搜索配置
 

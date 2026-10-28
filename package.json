@@ -13,6 +13,9 @@
     "start": "node --env-file-if-exists=.env src/server.mjs",
     "test": "node --test --test-concurrency=1 tests/*.test.mjs",
     "test:coverage": "node --test --experimental-test-coverage --test-coverage-include='src/*.mjs' --test-coverage-exclude='src/server.mjs' --test-coverage-lines=80 --test-coverage-functions=80 --test-coverage-branches=80 tests/*.test.mjs",
-    "check": "node --check src/app.mjs && node --check src/server.mjs && node --check src/site.mjs && node --check scripts/build-site.mjs && node --check public/app.js"
+    "check": "node --check src/app.mjs && node --check src/server.mjs && node --check src/site.mjs && node --check src/speed-insights.mjs && node --check scripts/build-site.mjs && node --check public/app.js && node --check public/speed-insights.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "2.0.0"
   }
 }
