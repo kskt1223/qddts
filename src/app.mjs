@@ -10,6 +10,8 @@ const assets = {
   '/styles.css': ['styles.css', 'text/css; charset=utf-8'],
   '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
   '/catalog.json': ['catalog.json', 'application/json; charset=utf-8'],
+  '/robots.txt': ['robots.txt', 'text/plain; charset=utf-8'],
+  '/sitemap.xml': ['sitemap.xml', 'application/xml; charset=utf-8'],
   '/assets/jug.svg': ['assets/jug.svg', 'image/svg+xml'],
   '/assets/logo.svg': ['assets/logo.svg', 'image/svg+xml'],
   '/assets/wechat-placeholder.svg': ['assets/wechat-placeholder.svg', 'image/svg+xml'],

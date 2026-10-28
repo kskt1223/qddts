@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="baidu-site-verification" content="codeva-Nbfdj96HGy" />
+  <link rel="canonical" href="{{siteUrl}}">
+  <meta name="theme-color" content="#087d77"><link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" type="module"></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="m8 3 3 5-3 3c2 3 3 4 6 5l3-3 4 3c1 6-4 6-7 4C7 17 3 12 3 6c0-3 3-4 5-3Z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 5h11v12H3V5Zm11 5h4l3 4v3h-7M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 6-7 11-7 11S5 16 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-wechat" viewBox="0 0 24 24"><path d="M14 13a6 6 0 0 1-7 1l-3 1 1-3a5 5 0 0 1-2-4c0-3 3-5 6-5s6 2 6 5"/><path d="M21 15c0 1-1 3-2 4l1 2-3-1h-1c-3 0-5-2-5-5s2-5 5-5 5 2 5 5Z"/><path d="M7 7h.1M11 7h.1M14 14h.1M18 14h.1"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13Z"/></symbol>
+  </defs></svg>
+  <div class="topbar"><div class="container"><span>{{city}}桶装水 · {{deliveryLabel}}</span><span>一桶好水，一份用心</span></div></div>
+  <header class="header"><div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{shopName}}首页"><img src="/assets/logo.svg" alt="" width="43" height="43"><span><strong>{{shopName}}</strong><small>XINZHENGYI WATER</small></span></a>
+    <nav aria-label="主导航"><a class="active" href="#products" aria-current="location">产品展示</a><a href="#how">订水费用</a><a href="#service">配送服务</a></nav>
+    <div class="header-actions"><button type="button" class="button button-small contact-trigger" aria-label="联系{{shopName}}" aria-haspopup="dialog" aria-controls="contact-dialog"><svg class="icon"><use href="#i-phone"/></svg><span>联系门店</span></button></div>
+  </div></header>
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy"><span class="eyebrow"><span class="live-dot"></span> 您身边的桶装水配送站</span>
+        <h1 id="hero-title">{{shopName}}<br><span class="teal">{{city}}桶装水配送</span></h1>
+        <p class="hero-description">一桶好水，送到家门口。<br>{{deliveryArea}}{{deliveryLabel}}，家庭与办公室均可联系订水。</p>
+        <div class="hero-actions"><a class="button" href="#products">查看产品价格 <svg class="icon"><use href="#i-arrow"/></svg></a><a class="hero-phone" href="{{phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg><span>{{phone}}<small>电话 / 微信，联系订水</small></span></a></div>
+        <div class="hero-points"><span><svg class="icon"><use href="#i-check"/></svg>明码标价</span><span><svg class="icon"><use href="#i-check"/></svg>{{deliveryShort}}</span><span><svg class="icon"><use href="#i-check"/></svg>电话 / 微信订水</span></div>
+      </div>
+      <div class="hero-art" role="img" aria-label="桶装水插画，产品包装以实物为准">
+        <div class="art-sun"></div><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+        <div class="art-word">FRESH<br>EVERY DAY.</div>
+        <div class="art-mountain mountain-one"></div><div class="art-mountain mountain-two"></div>
+        <div class="hero-jug jug-back"><img src="/assets/jug.svg" alt=""><span class="jug-label"><strong>山泉好水</strong><small>SPRING WATER</small></span></div>
+        <div class="hero-jug jug-front"><img src="/assets/jug.svg" alt=""><span class="jug-label"><svg class="icon"><use href="#i-drop"/></svg><strong>欣正义</strong><small>好水 · 到家</small></span></div>
+        <div class="art-delivery"><span class="round-icon"><svg class="icon"><use href="#i-truck"/></svg></span><span><strong>好水已就位</strong><small>{{deliveryLabel}}</small></span></div>
+        <span class="art-caption">桶装水示意 · 包装以实物为准</span>
+      </div>
+    </section>
+    <section class="container service-strip" aria-label="服务信息">
+      <div><span class="strip-icon"><svg class="icon"><use href="#i-pin"/></svg></span><span><strong>{{city}}桶装水配送</strong><small id="strip-area">{{deliveryArea}}</small></span></div>
+      <div><span class="strip-icon"><svg class="icon"><use href="#i-clock"/></svg></span><span><strong>营业时间</strong><small id="strip-hours">{{businessHours}}</small></span></div>
+      <div><span class="strip-icon"><svg class="icon"><use href="#i-truck"/></svg></span><span><strong id="strip-fee">{{deliveryLabel}}</strong><small>送达时段由门店确认</small></span></div>
+    </section>
+    <section class="container products-section" id="products" aria-labelledby="products-title">
+      <div class="section-heading"><div><span class="eyebrow">OUR WATER · 好水有选择</span><h2 id="products-title">{{city}}桶装水品牌与价格</h2><p>各款水价一目了然，选好喜欢的水，电话或微信联系门店。</p></div><span class="section-note">单桶售价 · {{deliveryShort}}</span></div>
+      <div class="filters" id="filters" role="group" aria-label="筛选产品" hidden>{{filterButtons}}</div>
+      <div id="products-grid" class="product-grid" aria-live="polite">{{productCards}}</div>
+      <p class="product-disclaimer">产品图片为示意，实际包装、容量以实物及门店确认为准。新桶押金另计，详细费用如下。</p>
+    </section>
+    <section class="how-section" id="how"><div class="container">
+      <div class="section-heading"><div><span class="eyebrow">CLEAR PRICES · 订水费用说明</span><h2>桶装水价格、押金与配送费</h2></div><p>选好品牌与桶数，电话或微信联系我们。</p></div>
+      <div class="steps price-explanations">
+        <article><span class="step-number">01</span><h3>桶装水水费</h3><div class="explanation-price"><strong id="water-price-range">{{priceRange}}</strong><span>元 / 桶</span></div><p>按所选产品的单桶售价和桶数计算，<br>具体价格见上方产品展示。</p></article>
+        <article><span class="step-number">02</span><h3>新桶押金</h3><div class="explanation-price"><strong id="deposit-price">{{deposit}}</strong><span>元 / 桶</span></div><p>需要新桶时另收押金。已有空桶，<br>请联系门店确认是否可以换桶。</p></article>
+        <article><span class="step-number">03</span><h3>配送费用</h3><div class="explanation-price"><strong id="delivery-price">{{deliveryFee}}</strong><span>元</span></div><p>{{deliveryArea}}，<br>{{deliveryLabel}}。</p></article>
+      </div>
+      <p class="pricing-example" id="pricing-example">{{pricingExample}}</p>
+    </div></section>
+    <section class="container service-section" id="service"><div class="service-intro"><span class="eyebrow">NEIGHBORHOOD SERVICE</span><h2>{{city}}送水服务<br>与订水常见问题</h2><p>{{shopName}}为家庭和办公室提供日常订水、送水服务。有特殊配送需求，欢迎提前联系我们。</p><p class="service-contact">订水电话：<a href="{{phoneHref}}">{{phone}}</a><br><span {{alternatePhoneHidden}}>备用电话：<a href="{{alternatePhoneHref}}">{{alternatePhone}}</a></span></p><button type="button" class="button button-outline contact-trigger" aria-haspopup="dialog" aria-controls="contact-dialog">联系供水站 <svg class="icon"><use href="#i-arrow"/></svg></button></div><div class="service-details">
+      <article><span class="detail-number">01</span><div><h3>{{city}}哪些地方可以送水？</h3><p id="service-area">{{serviceArea}}</p></div></article>
+      <article><span class="detail-number">02</span><div><h3>首次订水，需要交押金吗？</h3><p id="service-deposit">需要新桶时，每桶押金{{deposit}}元，水费与押金分别计算。具体费用可查看上方示例。</p></div></article>
+      <article><span class="detail-number">03</span><div><h3>什么时候能收到水？</h3><p id="service-hours">营业时间{{businessHours}}。请通过电话或微信告知希望送达的时间，由门店确认配送安排。</p></div></article>
+      <article><span class="detail-number">04</span><div><h3>已有空桶，可以直接换水吗？</h3><p>订水时请告知空桶品牌和数量，由门店确认是否适用，再核算水费与押金。</p></div></article>
+      <article><span class="detail-number">05</span><div><h3>电话或微信订水，需要提供什么？</h3><p>请提供所选产品、桶数、收货地址、联系电话及期望送达时间，并告知是否已有空桶，由门店确认费用和配送安排。</p></div></article>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="container footer-main"><a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="40" height="40"><span><strong>{{shopName}}</strong><small>好水到家，用心相伴。</small></span></a><div><small>订水热线 · 营业时间内为您服务</small><div class="footer-phones"><a href="{{phoneHref}}" id="footer-phone">{{phone}}</a><a href="{{alternatePhoneHref}}" id="footer-alt-phone" {{alternatePhoneHidden}}>{{alternatePhone}}</a></div></div></div><div class="container footer-bottom"><span>© <span id="year">{{year}}</span> {{shopName}} · {{city}}</span><span>{{districtNames}}</span><span>电话 / 微信联系订水</span></div></footer>
+  <aside class="contact-float" aria-label="电话与微信订水">
+    <button class="contact-float-toggle" id="contact-toggle" aria-label="展开电话和微信联系方式" aria-controls="contact-card" aria-expanded="false"><svg class="icon"><use href="#i-phone"/></svg><span>联系门店</span></button>
+    <div class="floating-card" id="contact-card">
+      <div class="floating-title"><h2>订水咨询</h2><button class="float-close" id="contact-close" aria-label="收起联系方式">×</button></div>
+      <div class="floating-phone"><span class="floating-label"><svg class="icon"><use href="#i-phone"/></svg>订水电话</span><a href="{{phoneHref}}" id="float-phone">{{phone}}</a><a href="{{alternatePhoneHref}}" id="float-alt-phone" {{alternatePhoneHidden}}>{{alternatePhone}}</a><small>点击号码即可拨打</small></div>
+      <div class="floating-wechat"><span class="floating-label"><svg class="icon"><use href="#i-wechat"/></svg>微信扫码订水</span><button type="button" class="qr-preview-button" id="wechat-qr-button" aria-haspopup="dialog" aria-controls="wechat-qr-dialog" aria-label="查看{{shopName}}微信二维码大图" {{qrDisabled}}><img id="wechat-qr" src="{{qrPath}}" alt="{{qrAlt}}" width="132" height="132"></button><p id="wechat-note">{{qrNote}}</p></div>
+      <div class="floating-hours"><svg class="icon"><use href="#i-clock"/></svg><span id="float-hours">{{businessHours}}</span></div>
+    </div>
+  </aside>
+  <dialog class="contact-dialog" id="contact-dialog" aria-label="联系{{shopName}}"></dialog>
+  <dialog class="qr-viewer" id="wechat-qr-dialog" aria-labelledby="qr-viewer-title" aria-describedby="qr-viewer-description">
+    <div class="qr-viewer-header"><h2 id="qr-viewer-title">微信联系{{shopName}}</h2><button type="button" id="qr-viewer-close" aria-label="关闭二维码大图" autofocus>×</button></div>
+    <img id="wechat-qr-large" src="{{qrPath}}" alt="{{shopName}}微信订水二维码大图">
+    <p id="qr-viewer-description">微信扫一扫，联系门店订水</p>
+  </dialog>
+</body>
+</html>

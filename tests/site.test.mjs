@@ -46,6 +46,42 @@ test('publishes the five confirmed prices and delivery terms as read-only data',
   assert.equal(response.headers.get('set-cookie'), null);
 });
 
+test('serves complete product names and prices before any JavaScript runs', async () => {
+  const html = await (await request('/')).text();
+  const { products } = await (await request('/catalog.json')).json();
+  for (const product of products) {
+    const card = html.match(new RegExp(`<article[^>]*data-product-id="${product.id}"[\\s\\S]*?</article>`))?.[0];
+    assert.ok(card, `missing static product: ${product.name}`);
+    assert.ok(card.includes(product.name));
+    if (product.price === null) assert.match(card, /价格请咨询门店/);
+    else assert.ok(card.includes(`>${product.price / 100}<`), `missing price: ${product.name}`);
+  }
+  assert.doesNotMatch(html, /正在为您准备好水/);
+});
+
+test('publishes a canonical homepage and preserves Baidu verification', async () => {
+  const html = await (await request('/')).text();
+  const head = html.match(/<head>([\s\S]*?)<\/head>/)[1];
+  assert.match(head, /<title>青岛桶装水价格与送水服务－欣正义供水站<\/title>/);
+  assert.match(head, /<link rel="canonical" href="https:\/\/www\.qddts\.cn\/">/);
+  assert.equal((head.match(/name="baidu-site-verification" content="codeva-Nbfdj96HGy"/g) || []).length, 1);
+  assert.match(html, /<h1[^>]*>[\s\S]*?欣正义供水站[\s\S]*?青岛桶装水配送[\s\S]*?<\/h1>/);
+});
+
+test('serves crawl rules and a sitemap containing only the canonical page', async () => {
+  const robots = await request('/robots.txt');
+  assert.equal(robots.status, 200);
+  assert.match(robots.headers.get('content-type'), /text\/plain/);
+  const rules = await robots.text();
+  assert.match(rules, /User-agent: \*/);
+  assert.match(rules, /Sitemap: https:\/\/www\.qddts\.cn\/sitemap\.xml/);
+  assert.doesNotMatch(rules, /Disallow:\s*\//);
+  const sitemap = await request('/sitemap.xml');
+  assert.equal(sitemap.status, 200);
+  assert.match(sitemap.headers.get('content-type'), /application\/xml/);
+  assert.deepEqual([...((await sitemap.text()).matchAll(/<loc>(.*?)<\/loc>/g))].map((match) => match[1]), ['https://www.qddts.cn/']);
+});
+
 test('removes admin pages, scripts, APIs and all ordering APIs', async () => {
   for (const path of ['/admin', '/admin.html', '/admin.js', '/api/shop', '/api/orders', '/api/admin/session', '/api/admin/orders', '/api/admin/login']) {
     for (const method of ['GET', 'POST']) assert.equal((await request(path, method)).status, 404, `${method} ${path}`);
