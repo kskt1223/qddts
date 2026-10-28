@@ -1,0 +1,93 @@
+{
+  "settings": {
+    "name": "欣正义供水站",
+    "city": "青岛",
+    "phone": "15588692891",
+    "alternatePhone": "19963998585",
+    "businessHours": "9:00–18:00",
+    "deposit": 5000,
+    "deliveryFee": 0,
+    "deliveryArea": "市南区、市北区、崂山区、李沧区",
+    "deliveryDistricts": [
+      "市南区",
+      "市北区",
+      "崂山区",
+      "李沧区"
+    ],
+    "wechatQr": "/assets/wechat_qrcode.png"
+  },
+  "products": [
+    {
+      "spec": "",
+      "available": true,
+      "id": "lizhi-mineral",
+      "name": "力之泉矿泉水",
+      "brand": "力之泉",
+      "category": "矿泉水",
+      "price": 2200,
+      "color": "blue",
+      "label": "天然矿泉",
+      "description": "矿泉好水，日常饮水多一个选择。"
+    },
+    {
+      "spec": "",
+      "available": true,
+      "id": "lizhi-spring",
+      "name": "力之泉山泉水",
+      "brand": "力之泉",
+      "category": "山泉水",
+      "price": 1700,
+      "color": "green",
+      "label": "山泉好水",
+      "description": "家庭与办公饮水，按需轻松选购。"
+    },
+    {
+      "spec": "",
+      "available": true,
+      "id": "ciwei",
+      "name": "刺猬优选",
+      "brand": "刺猬优选",
+      "category": "品牌精选",
+      "price": 1700,
+      "color": "mint",
+      "label": "优选好水",
+      "description": "熟悉的日常选择，订水更方便。"
+    },
+    {
+      "spec": "",
+      "available": true,
+      "id": "chunlan",
+      "name": "淳蓝山泉",
+      "brand": "淳蓝",
+      "category": "山泉水",
+      "price": 1500,
+      "color": "cyan",
+      "label": "山泉好水",
+      "description": "把日常的一杯水，认真安排好。"
+    },
+    {
+      "spec": "",
+      "available": true,
+      "id": "zhengyi",
+      "name": "正义水",
+      "brand": "正义水",
+      "category": "品牌精选",
+      "price": 1300,
+      "color": "navy",
+      "label": "日常之选",
+      "description": "实惠的日常用水，送到更省心。"
+    },
+    {
+      "spec": "11.3L / 18.9L",
+      "available": true,
+      "id": "laoshan",
+      "name": "崂山微矿水",
+      "brand": "崂山系列",
+      "category": "更多好水",
+      "price": null,
+      "color": "gold",
+      "label": "崂山系列",
+      "description": "11.3L / 18.9L，售价与供货情况请咨询门店。"
+    }
+  ]
+}

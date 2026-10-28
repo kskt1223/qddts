@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 330" fill="none">
+<defs>
+<linearGradient id="body" x1="43" y1="170" x2="180" y2="175" gradientUnits="userSpaceOnUse"><stop stop-color="#94cbd9"/><stop offset=".17" stop-color="#e9f8fb"/><stop offset=".4" stop-color="#badfe8"/><stop offset=".72" stop-color="#91c1d0"/><stop offset="1" stop-color="#4d91a8"/></linearGradient>
+<linearGradient id="water" x1="110" y1="53" x2="110" y2="312" gradientUnits="userSpaceOnUse"><stop stop-color="#d2eaf1"/><stop offset="1" stop-color="#81b7cb"/></linearGradient>
+<linearGradient id="label" x1="46" x2="174" y1="165" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#e7f0ee"/><stop offset=".3" stop-color="white"/><stop offset="1" stop-color="#d0e4e2"/></linearGradient>
+<linearGradient id="cap" x1="82" y1="20" x2="138" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#155682"/><stop offset=".4" stop-color="#478cac"/><stop offset="1" stop-color="#134567"/></linearGradient>
+</defs>
+<ellipse cx="111" cy="314" rx="74" ry="9" fill="#153f53" opacity=".1"/>
+<path d="M86 30h48v27c0 11 8 18 20 25 21 13 28 27 28 51v146c0 20-17 30-72 30s-72-10-72-30V133c0-24 7-38 28-51 12-7 20-14 20-25V30Z" fill="url(#body)" stroke="#6c9fb3" stroke-width="1.5"/>
+<path d="M49 129c0-20 6-29 23-40 15-10 23-16 23-33h30c0 17 8 23 23 33 17 11 23 20 23 40v144c0 17-19 23-61 23s-61-6-61-23V129Z" fill="url(#water)" opacity=".55"/>
+<path d="M43 119c32 9 102 9 134 0M40 132c30 10 110 10 140 0M41 249c35 10 104 10 138 0M40 264c35 10 105 10 140 0M44 283c34 10 99 10 132 0" stroke="#4a899e" stroke-opacity=".35" stroke-width="4"/>
+<path d="M48 117c30 6 94 6 124 0M47 247c33 7 94 7 127 0M46 262c33 8 97 8 129 0" stroke="#effcff" stroke-opacity=".6" stroke-width="2"/>
+<path d="M55 105c6-10 15-13 23-19M54 143v84" stroke="white" stroke-opacity=".5" stroke-width="6" stroke-linecap="round"/>
+<path d="M42 155c36 6 100 6 136 0v75c-37 7-100 7-136 0v-75Z" fill="url(#label)"/>
+<path d="M43 155c36 6 99 6 134 0v9c-36 6-99 6-134 0v-9ZM43 222c36 6 99 6 134 0v8c-36 6-99 6-134 0v-8Z" fill="#398f91" opacity=".6"/>
+<rect x="81" y="15" width="58" height="25" rx="5" fill="url(#cap)"/>
+<path d="M86 21v14m7-14v14m7-14v14m7-14v14m7-14v14m7-14v14m7-14v14m6-14v14" stroke="#87bdcf" stroke-opacity=".45"/>
+<ellipse cx="110" cy="16" rx="27" ry="3" fill="#6097b3"/>
+<path d="M85 43h50" stroke="#346e8b" stroke-width="4"/>
+</svg>
