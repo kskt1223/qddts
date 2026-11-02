@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.13.0" },
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "build": "node scripts/build-site.mjs",
     "build:check": "node scripts/build-site.mjs --check",
@@ -13,9 +15,10 @@
     "start": "node --env-file-if-exists=.env src/server.mjs",
     "test": "node --test --test-concurrency=1 tests/*.test.mjs",
     "test:coverage": "node --test --experimental-test-coverage --test-coverage-include='src/*.mjs' --test-coverage-exclude='src/server.mjs' --test-coverage-lines=80 --test-coverage-functions=80 --test-coverage-branches=80 tests/*.test.mjs",
-    "check": "node --check src/app.mjs && node --check src/server.mjs && node --check src/site.mjs && node --check src/speed-insights.mjs && node --check scripts/build-site.mjs && node --check public/app.js && node --check public/speed-insights.js"
+    "check": "node --check src/app.mjs && node --check src/server.mjs && node --check src/site.mjs && node --check src/speed-insights.mjs && node --check src/web-analytics.mjs && node --check scripts/build-site.mjs && node --check public/app.js && node --check public/speed-insights.js && node --check public/web-analytics.js"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "2.0.0"
   }
 }
